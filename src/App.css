@@ -1,0 +1,33 @@
+.App{
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    position: relative; /* 相対配置 */
+    min-height: 100vh;
+}
+
+.App::before {
+    content: "";
+    position: fixed; /* 画面全体に背景を適用 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./img/poke-back.png"); /* 画像のパス */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* 全ての要素の背面に配置 */
+    opacity: 0.8; /* 透明度を調整（オプション） */
+}
+
+
+
+.pokemonCardContaier{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
