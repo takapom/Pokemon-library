@@ -17,6 +17,11 @@ const Card = ({pokemon}) => {
             );    
          })}
       </div>
+      <div className='cardInfo'>
+         <div className='cardDate'>
+          <p className='title'>重さ：{pokemon.weight}</p>
+         </div>
+      </div>
     </div>
   );
 };

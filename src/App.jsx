@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { getAllPokemon } from "./utils/pokemon"; 
 import { getPokemon } from "./utils/pokemon"; 
 import Card from "./components/Card";
+import "./App.css" 
+import "./Card.css"
+import Navbar from "./components/Navbar/Navbar";
 
 function App(){
   const initialURL = "https://pokeapi.co/api/v2/pokemon";
@@ -23,7 +26,6 @@ function App(){
   const loadPokemon = async(data) => {
     let _pokemonDate = await Promise.all(
       data.map((pokemon) => {
-        // console.log(pokemon)
         let pokemonRecord = getPokemon(pokemon.url);
         return pokemonRecord;
       })
@@ -32,7 +34,9 @@ function App(){
   };
 
   return(
-    <div className="App">
+    <>
+    <Navbar />
+        <div className="App">
     {loading ? (
       <h1>ロード中.....</h1>
     ) : (
@@ -45,6 +49,8 @@ function App(){
       </>
     )}
   </div>
+
+    </>
   );
 }
 
